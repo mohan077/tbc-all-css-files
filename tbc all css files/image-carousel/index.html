@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Switcher</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .tabs {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .image-container {
+      text-align: center;
+    }
+
+    .responsive-image {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <ul class="tabs">
+    <li class="tab" onclick="showContent(1)">Tab 1</li>
+    <li class="tab" onclick="showContent(2)">Tab 2</li>
+    <li class="tab" onclick="showContent(3)">Tab 3</li>
+  </ul>
+  <div class="content">
+    <div id="content1">Content for Tab 1</div>
+    <div id="content2" style="display: none;">Content for Tab 2</div>
+    <div id="content3" style="display: none;">Content for Tab 3</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="image-container">
+    <img id="image" class="responsive-image" src="default-image.jpg" alt="Default Image">
+  </div>
+</div>
+
+<script>
+  function showContent(tabNumber) {
+    // Hide all content divs
+    for (let i = 1; i <= 3; i++) {
+      document.getElementById('content' + i).style.display = 'none';
+    }
+
+    // Show the selected content div
+    document.getElementById('content' + tabNumber).style.display = 'block';
+
+    // Change the image source based on the selected tab
+    const image = document.getElementById('image');
+    switch (tabNumber) {
+      case 1:
+        image.src = 'image1.jpg';
+        break;
+      case 2:
+        image.src = 'image2.jpg';
+        break;
+      case 3:
+        image.src = 'image3.jpg';
+        break;
+      default:
+        image.src = 'default-image.jpg';
+    }
+  }
+</script>
+
+</body>
+</html>

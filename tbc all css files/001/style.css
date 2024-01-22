@@ -1,0 +1,89 @@
+.specialists{
+    display: flex;
+}
+
+
+.specialists-details{
+    display: flex;
+    width: 100%;
+    max-width: 356px;
+}
+
+.s-name{
+    width: 70%;
+    background-color: #2582A1;
+    padding: 5px 10px 5px;
+    color: #fff;
+}
+
+.s-name h3{
+    font-weight: 700;
+font-size: 14px;
+line-height: 20px;
+margin-bottom: 0;
+color: #fff;
+font-family: oxygen, sans-serif;
+}
+
+.s-name p{
+font-weight: 300;
+font-size: 12px;
+line-height: 20px;
+margin-bottom: 0 !important;
+font-family: oxygen, sans-serif;
+}
+.s-ctas{
+    width: 30%;
+}
+
+.book-btn{
+    font-weight: 300;
+font-size: 12px;
+line-height: 12px;
+background-color: #60CCBE;
+padding: 7px 9px;
+width: 100%;
+}
+
+.book-btn a{
+    font-size: 12px;
+    line-height: 12px;
+    color: #004763;
+    text-decoration: none !important;
+}
+
+.view-profile{
+    background-color: #004763;
+padding: 7px 9px;
+width: 100%;
+}
+
+.view-profile a{
+    font-size: 12px;
+    line-height: 12px;
+    color: #fff;
+    text-decoration: none !important;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .s-name h3{
+        font-weight: 700;
+    font-size: 10px;
+    line-height: 20px;
+    margin-bottom: 0;
+    color: #fff;
+    font-family: oxygen, sans-serif;
+    background-color: blue;
+    
+    }
+    .s-name p{
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 0 !important;
+        font-family: oxygen, sans-serif;
+        }
+    
+}

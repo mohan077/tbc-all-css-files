@@ -1,0 +1,65 @@
+        
+
+        /* Basic styling for the tabbed interface */
+        .tab-container {
+           
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            margin-right: 10px;
+            text-underline-offset: 10px;
+            
+        }
+
+        .tab-content {
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Active tab styles */
+        .active-tab {
+            text-decoration: underline;
+        }
+
+        /* Container for the photo */
+        .photo-container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Photo styles */
+        .photo {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Content container */
+        .content-container {
+            flex: 1;
+            padding: 20px;
+            max-width: 500%;
+        }
+
+        /* Mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            
+            .tab {
+                margin-right: 0;
+                margin-bottom: 0px;
+            }
+
+            div.tab-container{
+                display: inline;
+                text-align: center;
+
+            }
+        }
+    

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Interface</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="tab-container">
+       
+        <div class="content-container">
+            <!-- left -->
+            <div class="tab-container">
+                <div class="tab active-tab" data-content="content1">Health Care</div>
+                <div class="tab " data-content="content2">FNCG</div>
+                <div class="tab" data-content="content3">Education</div>
+                <div class="tab" data-content="content4">agriculture</div>
+                <div class="tab" data-content="content5">Lifestyle</div>
+                <div class="tab" data-content="content6">Packaging</div>
+                <div class="tab" data-content="content7">Mining</div>
+                <div class="tab" data-content="content8">Infrastructure</div>
+                <div class="tab" data-content="content9">Trading</div>
+
+            </div>
+            
+            
+            <div class="tab-content" id="content1">
+                <h2>Pashupati Instant Foods Pvt. Ltd <br>
+                    BLC Instant Foods <br>
+                    Hetauda Dairy Industries<br>
+                    Mahalaxmi Maida Mills </h2>
+                <p>This is the content for Tab 1.</p>
+            </div>
+            <div class="tab-content" id="content2">
+                <h2>Content 2</h2>
+                <p>This is the content for Tab 2.</p>
+            </div>
+            <div class="tab-content" id="content3">
+                <h2>Content 3</h2>
+                <p>This is the content for Tab 3.</p>
+            </div>
+            <div class="tab-content" id="content4">
+                <h2>Content 4</h2>
+                <p>This is the content for Tab 4.</p>
+            </div>
+            <div class="tab-content" id="content5">
+                <h2>Content 5</h2>
+                <p>This is the content for Tab 5.</p>
+            </div>
+            <div class="tab-content" id="content6">
+                <h2>Content 6</h2>
+                <p>This is the content for Tab 6.</p>
+            </div>
+            <div class="tab-content" id="content7">
+                <h2>Content 7</h2>
+                <p>This is the content for Tab 7.</p>
+            </div>
+            <div class="tab-content" id="content8">
+                <h2>Content 8</h2>
+                <p>This is the content for Tab 8.</p>
+            </div>
+            <div class="tab-content" id="content9">
+                <h2>Content 9</h2>
+                <p>This is the content for Tab 9.</p>
+            </div>
+        </div>
+        <!-- right container -->
+        <div class="photo-container">
+            <img class="photo" src="./Mask group.jpg" alt="Default Photo">
+        </div>
+    </div>
+
+   
+    <script>
+        // Function to handle tab clicks
+        function handleTabClick(tab) {
+            const contentId = tab.getAttribute('data-content');
+            const photo = document.querySelector('.photo');
+            
+            // Remove the 'active-tab' class from all tabs
+            tabs.forEach(t => t.classList.remove('active-tab'));
+            
+            // Add the 'active-tab' class to the clicked tab
+            tab.classList.add('active-tab');
+            
+            // Hide all tab content
+            tabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Display the selected tab content
+            document.getElementById(contentId).style.display = 'block';
+            
+            // Change the photo based on the selected tab
+            switch (contentId) {
+                case 'content1':
+                    photo.src = './Mask group.jpg';
+                    break;
+                case 'content2':
+                    photo.src = './happy-nurse-holding-laughing-elderly-man-hand-wheelchair-garden-nursing-home.jpg';
+                    break;
+                case 'content3':
+                    photo.src = './Mask group.jpg';
+                    break;
+                    case 'content4':
+                    photo.src = './Mask group.jpg';
+                    break;
+                default:
+                    photo.src = './happy-nurse-holding-laughing-elderly-man-hand-wheelchair-garden-nursing-home.jpg ';
+            }
+        }
+    
+        // Get all tabs and tab content elements
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+    
+        // Attach click event listeners to tabs
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                handleTabClick(tab);
+            });
+        });
+    
+        // Activate the "Health Care" tab by default
+        const defaultTab = document.querySelector('[data-content="content1"]');
+        if (defaultTab) {
+            handleTabClick(defaultTab);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .switchable-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .switchable-form h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .switchable-form p {
+            margin-bottom: 10px;
+        }
+
+        .switchable-form label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        .switchable-form select,
+        .switchable-form input[type="text"],
+        .switchable-form textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .switchable-form input[type="submit"] {
+            width: auto;
+            padding: 8px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .switchable-form .complaint-fields {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="switchable-form">
+        <h3>Feedback Form</h3>
+        <p>
+            <label for="feedback-type">Feedback Type:</label>
+            <select id="feedback-type">
+                <option value="Suggestion">Suggestion</option>
+                <option value="Complaint">Complaint</option>
+            </select>
+        </p>
+    
+        <div class="suggestion-fields">
+            <h4>Suggestion</h4>
+            <p>
+                <label for="suggestion-subject">Subject:</label>
+                <input type="text" id="suggestion-subject" name="suggestion-subject">
+            </p>
+        
+            <p>
+                <label for="suggestion-comment">Comment:</label>
+                <textarea id="suggestion-comment" name="suggestion-comment"></textarea>
+            </p>
+        </div>
+    
+        <div class="complaint-fields">
+            <h4>Complaint</h4>
+            <p>
+                <label for="complaint-subject">Subject:</label>
+                <input type="text" id="complaint-subject" name="complaint-subject">
+            </p>
+        
+            <p>
+                <label for="complaint-reason">Reason:</label>
+                <textarea id="complaint-reason" name="complaint-reason"></textarea>
+            </p>
+        </div>
+    
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var suggestionFields = document.querySelector('.suggestion-fields');
+            var complaintFields = document.querySelector('.complaint-fields');
+    
+            if ('querySelector' in document && 'addEventListener' in window) {
+                var feedbackType = document.getElementById('feedback-type');
+                feedbackType.addEventListener('change', function() {
+                    if (feedbackType.value === 'Suggestion') {
+                        suggestionFields.style.display = 'block';
+                        complaintFields.style.display = 'none';
+                    } else if (feedbackType.value === 'Complaint') {
+                        suggestionFields.style.display = 'none';
+                        complaintFields.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

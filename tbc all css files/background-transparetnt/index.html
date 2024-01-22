@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            position: relative;
+            background-image: url(./amazing-shot-farmland-with-cows-sunset\ 1.png);
+            width: 100vw;
+            height: 400px;
+            background-size: cover;
+            background-position: center center;
+        }
+
+
+/* This pseudo-element will act as a semi-transparent overlay */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Adjust the alpha (fourth) value (0.5) to set the opacity of the image */
+}
+
+.text-over-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="text-over-image">
+            Hello mohan
+        </p>
+    </div>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo neque cum sapiente non exercitationem quis, ipsa molestiae ducimus placeat reiciendis illo explicabo totam. Accusantium minus inventore ullam quas sunt consectetur.</p>
+    <p>Voluptas fugit exercitationem cum omnis. Tempora sapiente beatae a eligendi, natus aperiam nisi consequuntur inventore quo esse rerum et accusantium ut, distinctio dolorum, corrupti vel. Quia tempora odit rem porro!</p>
+    <p>Quam, similique sunt eveniet officiis sequi totam perspiciatis autem suscipit laborum dolor ipsam inventore reiciendis fugiat, soluta facilis a perferendis, atque assumenda natus explicabo quisquam? Beatae exercitationem esse cumque architecto.</p>
+    <p>Laborum, dolorum officiis exercitationem, iure harum ea quibusdam debitis inventore voluptatibus, similique earum necessitatibus natus? Exercitationem qui, quibusdam culpa esse cupiditate numquam. Iure perferendis soluta pariatur ad ea neque accusantium.</p>
+    <p>Iure hic tenetur sequi, ea quos minus. Consequuntur dolores nulla sit possimus, optio non maxime quod alias unde expedita, ab repudiandae, soluta atque sunt sint quis corporis. Asperiores, fuga necessitatibus.</p>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="weather">Select a weather: </label>
+    <select name="weather" id="">
+            <option value="sunny">a</option>
+            <option value="gloomy">b</option>
+            <option value="rainy">c</option>
+    </select>
+
+    <p></p>
+
+    <script>
+        let select = document.querySelector('select'); 
+        const para = document.querySelector("p"); 
+        
+        select.addEventListener("change", setWeather); 
+
+        function setWeather(){
+            const choice = select.value; 
+            if (choice === "sunny") {
+    para.textContent =
+      "It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.";
+  } else if (choice === "rainy") {
+    para.textContent =
+      "Rain is falling outside; take a rain coat and an umbrella, and don't stay out for too long.";
+  }
+            
+        }
+
+
+        
+
+    </script>
+</body>
+</html>
